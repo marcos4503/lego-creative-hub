@@ -15,7 +15,13 @@ The main Power Functions components originally manufactured by Lego consist of t
 
 <table>
     <tr>
+        <td><img src="This-Repository/extension.png" width="128px" height="128px"><br>Extension Cable</td>
         <td><img src="This-Repository/switch.png" width="128px" height="128px"><br>Control Switch</td>
+        <td><img src="This-Repository/ir-remote-1.png" width="128px" height="128px"><br>IR Speed Remote Control</td>
+        <td><img src="This-Repository/ir-remote-2.png" width="128px" height="128px"><br>IR Remote Control</td>
+    </tr>
+    <tr>
+        <td><img src="This-Repository/ir-receiver.png" width="128px" height="128px"><br>IR Receiver</td>
         <td><img src="This-Repository/leds.png" width="128px" height="128px"><br>LED Lights</td>
     </tr>
 </table>
