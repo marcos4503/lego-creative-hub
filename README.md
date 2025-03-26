@@ -67,6 +67,7 @@ When you combine the components from the Power Functions line, along with other 
 
 The videos below gives a good example of how to create something with the Power Function line, in conjunction with other types of Lego components:
 
+![](This-Repository/ex-video-1.mp4)
 <video width="320" height="240" controls>
   <source src="This-Repository/ex-video-1.mp4" type="video/mp4">
 </video>
