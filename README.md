@@ -23,6 +23,12 @@ The main Power Functions components originally manufactured by Lego consist of t
     <tr>
         <td><img src="This-Repository/ir-receiver.png" width="128px" height="128px"><br>IR Receiver</td>
         <td><img src="This-Repository/leds.png" width="128px" height="128px"><br>LED Lights</td>
+        <td><img src="This-Repository/xl-motor.png" width="128px" height="128px"><br>XL Motor</td>
+        <td><img src="This-Repository/l-motor.png" width="128px" height="128px"><br>L Motor</td>
+    </tr>
+    <tr>
+        <td><img src="This-Repository/m-motor.png" width="128px" height="128px"><br>M Motor</td>
+        <td><img src="This-Repository/m-motor.png" width="128px" height="128px"><br>Servo Motor</td>
     </tr>
 </table>
 
