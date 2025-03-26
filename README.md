@@ -28,7 +28,36 @@ The main Power Functions components originally manufactured by Lego consist of t
     </tr>
     <tr>
         <td><img src="This-Repository/m-motor.png" width="128px" height="128px"><br>M Motor</td>
-        <td><img src="This-Repository/m-motor.png" width="128px" height="128px"><br>Servo Motor</td>
+        <td><img src="This-Repository/e-motor.png" width="128px" height="128px"><br>E Motor</td>
+        <td><img src="This-Repository/servo-motor.png" width="128px" height="128px"><br>Servo Motor</td>
+        <td><img src="This-Repository/buggy-motor.png" width="128px" height="128px"><br>Buggy Motor</td>
+    </tr>
+    <tr>
+        <td><img src="This-Repository/train-motor.png" width="128px" height="128px"><br>Train Motor</td>
+        <td><img src="This-Repository/aa-battery-box.png" width="128px" height="128px"><br>AA Battery Box</td>
+        <td><img src="This-Repository/aaa-battery-box.png" width="128px" height="128px"><br>AAA Battery Box</td>
+        <td><img src="This-Repository/rechargeable-battery-box.png" width="128px" height="128px"><br>Rechargeable Batt. Box</td>
+    </tr>
+</table>
+
+Alternative manufacturers such as Mould King, CaDA and generics, manufacture most of the above components, and also manufacture proprietary components (all compatible with Lego components) such as the following mains:
+
+<table>
+    <tr>
+        <td><img src="This-Repository/l-bb-motor.png" width="128px" height="128px"><br>L Black Burst Motor</td>
+        <td><img src="This-Repository/s-motor-23.png" width="128px" height="128px"><br>S 2x3 Motor</td>
+        <td><img src="This-Repository/s-motor-24.png" width="128px" height="128px"><br>S 2x4 Motor</td>
+        <td><img src="This-Repository/smoker.png" width="128px" height="128px"><br>Smoke Sprayer</td>
+    </tr>
+    <tr>
+        <td><img src="This-Repository/smoker1.png" width="128px" height="128px"><br>Auto Smoke Sprayer</td>
+        <td><img src="This-Repository/ble-speaker.png" width="128px" height="128px"><br>Bluetooth LE Speaker</td>
+        <td><img src="This-Repository/g-rechargeable-battery-box1.png" width="128px" height="128px"><br>Rechargeable Batt. Box</td>
+        <td><img src="This-Repository/g-rechargeable-battery-box2.png" width="128px" height="128px"><br>Rechargeable Batt. Box</td>
+    </tr>
+    <tr>
+        <td><img src="This-Repository/mk-controller.png" width="128px" height="128px"><br>BT Controller</td>
+        <td><img src="This-Repository/mk-receiver.png" width="128px" height="128px"><br>Battery & BT Receiver</td>
     </tr>
 </table>
 
