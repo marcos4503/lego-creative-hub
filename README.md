@@ -67,11 +67,7 @@ When you combine the components from the Power Functions line, along with other 
 
 The videos below gives a good example of how to create something with the Power Function line, in conjunction with other types of Lego components:
 
-<video src="https://github.com/marcos4503/lego-creative-hub/blob/5f848a4660feace491c1e4810f58c5334bc63422/This-Repository/ex-video-1.mp4"></video>
-
-<video width="320" height="240" controls>
-  <source src="This-Repository/ex-video-2.mp4" type="video/mp4">
-</video>
+https://github.com/user-attachments/assets/965a3fda-8353-4494-a4e0-104d3426e649
 
 <p align="center">
     <small>
