@@ -61,4 +61,26 @@ Alternative manufacturers such as Mould King, CaDA and generics, manufacture mos
     </tr>
 </table>
 
-Power Functions are the successors to the "9v System", also from Lego, and were launched on the market in 2007, and discontinued by Lego in 2018, although it continues to be produced by alternative brands such as Mould King, CaDA and other generic Brands.
+Power Functions are the successors to the "9v System", also from Lego, and were launched on the market in 2007, and discontinued by Lego in 2018, although it continues to be produced by alternative brands such as Mould King, CaDA and other generic brands.
+
+When you combine the components from the Power Functions line, along with other Lego components, such as Beams, Bricks, Arms, Axles, Gears, Wheels, Pneumatic Cylinders, Chains, Belts, Tracks, Suspensions and many other types of components, you can bring to life many and many of your ideas involving mechatronics or even robotics. It is a great hobby and way to study these items.
+
+The videos below gives a good example of how to create something with the Power Function line, in conjunction with other types of Lego components:
+
+<video width="320" height="240" controls>
+  <source src="This-Repository/ex-video-1.mp4" type="video/mp4">
+</video>
+
+<video width="320" height="240" controls>
+  <source src="This-Repository/ex-video-2.mp4" type="video/mp4">
+</video>
+
+<p align="center">
+    <small>
+        Credits for the videos above go to the <a href="https://www.youtube.com/@BrickExperimentChannel">Brick Experiment Channel</a>
+    </small>
+</p>
+
+# What is Lego Creative Hub and what is the goal?
+
+a
