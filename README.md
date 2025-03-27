@@ -81,4 +81,44 @@ https://github.com/user-attachments/assets/18485da4-44a5-4f7b-a229-e5b5ab259297
 
 # What is Lego Creative Hub and what is the goal?
 
+The Lego Creative Hub is a Hub project to be used in your Lego projects and constructions that use Power Functions components. A Lego Creative Hub should act as a true central component, being the brain of your construction, controlling all the Power Functions components of your construction, and still having the possibility of controlling Modules and reading Sensors created for Arduino/ESP32, this way, you can perfectly combine constructions with Power Function, while using Arduino/ESP32 Actuators and Sensors.
+
+The goal of the Lego Creative Hub is to be a true Hub for your projects, being easy to use, programmable and providing the greatest possible convenience and creative freedom for your built gadgets. To achieve this goal, the Lego Creative Hub has the following key features:
+
+- Has Open Source Software.
+- Cheap to recreate.
+- Uses Xbox or Playstation Bluetooth Controllers for Input, instead of IR Controllers like Lego.
+- Can control up to 4 Power Function Motors (and other PF components except Power Function LEDs).
+- Can control up to 2 Geekservo Motors.
+- Can have connected, Sensors and Actuators designed for Arduino/ESP32.
+- It can be programmed through an Android app.
+- For better work, it has a complete Input and Output kit, including Buttons, Display, LED and Buzzer.
+- Only needs to be connected to a Lego Battery Box to power itself and all the components connected to the Hub.
+- Displays the remaining percentage of battery life.
+- Other minor, but interesting things.
+
+The Lego Creative Hub is divided into two parts, Hardware and Software. In the next topic you will see what to do if you want to use this project in your Power Functions builds.
+
+# Using Lego Creative Hub in your Power Function projects
+
+As previously stated, the Lego Creative Hub is divided into two parts, the Hardware and the Software. The Hardware is basically the mini-computer, which you will need to build your copy on. Once you have your copy built, you will need to grab the code from this repository and upload it to the mini-computer, which will then run the Software, bringing the mini-computer you built, to life, and transforming it into the Lego Creative Hub.
+
+The entire process of how to assemble your copy of the mini-computer, prepare it, load the source code, how to use it, etc, is explained in the following topics. So if you are interested in using the Lego Creative Hub, just keep reading! :)
+
+# Prerequisites
+
+If you want to assemble and use Lego Creative Hub, you must have some minimum knowledge required in some areas, as listed below:
+
+- Electronics Basics (The minimum, for example, to not create a short circuit).
+- Soldering of components with Tin and similar.
+- Basic of programming.
+- Basics of hardware assembly (such as PCs, for example).
+- At least basic knowledge about Arduino/ESP32.
+
+If you do not have all of the above minimum requirements, then I recommend that you study up on what you do not have or ask someone who does to recreate Lego Creative Hub for you.
+
+If you meet all of the above minimum requirements, then you are ready to proceed to create your copy of Lego Creative Hub. So just keep reading all the next topics.
+
+# Assembling the Lego Creative Hub Mini-Computer
+
 a
