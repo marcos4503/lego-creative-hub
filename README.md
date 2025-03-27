@@ -142,4 +142,10 @@ Before we start the assembly of the mini-computer, see all the components we wil
         <td>40mm x 60mm<br>Universal PCBs</td>
         <td>Universal PCBs offer a reliable, cheap, fast, and simple way so we can hold the electronic components we will use in the mini-computer. Make sure you choose PCBs the same size as your Case or Base, chosen. If you choose PCBs sizes differently from the one recommended here, then you can distribute components differently and may require more or less PCBs. With these PCBs of this recommended size, we will make a "mini tower" with 3 floors of components, resulting in a "high" but still compact mini-computer. If you want to buy the exact same photo Universal PCBs, use this <a href="https://pt.aliexpress.com/item/1005006665029598.html">link</a>.</td>
     </tr>
+    <tr>
+        <td><img src="This-Repository/c-m3-spacer-1.png" width="64px" height="64px"></td>
+        <td>4x</td>
+        <td>15mm Female-Male M3 Spacers With Nut</td>
+        <td>These spacers will be used to fix the first Universal PCB on the Case or Base you have chosen.</td>
+    </tr>
 </table>
