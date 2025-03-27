@@ -121,7 +121,11 @@ If you meet all of the above minimum requirements, then you are ready to proceed
 
 # Assembling the Lego Creative Hub Mini-Computer
 
-Before we start the assembly of the mini-computer, see all the components we will need. In everything related to electronic modules and components, you should buy EVERYTHING that is the same as the one indicated. If you can't find something that is exactly the same, buy something similar but that performs the same functions with the same capabilities or as closer as possible.
+Before we start the assembly of the mini-computer, let's see all the components we will need.
+
+## Needed Components
+
+In everything related to electronic modules and components, you should buy EVERYTHING that is the same as the one indicated. If you can't find something that is exactly the same, buy something similar but that performs the same functions with the same capabilities or as closer as possible.
 
 <table>
     <tr>
