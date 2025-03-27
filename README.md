@@ -155,3 +155,13 @@ Before we start the assembly of the mini-computer, see all the components we wil
         <td>These spacers will be used to fix the first PCB floor to the second floor of PCB and the second floor of PCB to the third PCB floor. Depending on the Universal PCB you have chosen, you might need to use a drill to widen their gap holes a little.</td>
     </tr>
 </table>
+
+With the exact items above, a structure similar to this can be built...
+
+<img src="This-Repository/tower-structure.png" />
+
+You may need to make 4 holes with a drill, on the first floor of PCB, to fix the case or base of your choice.
+
+<img src="This-Repository/tower-structure-first-pcb.png" />
+
+But now, let's continue to the next components. Component tables will now be divided into the components required for each PCB floor of the mini-computer.
