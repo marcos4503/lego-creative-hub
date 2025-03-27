@@ -164,7 +164,7 @@ With the exact items above, a structure similar to this can be built...
 
 <img src="This-Repository/tower-structure.png" />
 
-You may need to make 4 holes with a drill, on the first floor of PCB, to fix the case or base of your choice.
+You may need to make 4 holes with a drill, on the first floor of PCB, to fix the Case or Base of your choice.
 
 <img src="This-Repository/tower-structure-first-pcb.png" />
 
