@@ -121,4 +121,12 @@ If you meet all of the above minimum requirements, then you are ready to proceed
 
 # Assembling the Lego Creative Hub Mini-Computer
 
-a
+Before we start the assembly of the mini-computer, see all the components we will need. In everything related to electronic modules and components, you should buy EVERYTHING that is the same as the one indicated. If you can't find something that is exactly the same, buy something similar but that performs the same functions with the same capabilities or as closer as possible.
+
+<table>
+    <tr>
+        <td><img src="This-Repository/c-case.png" width="64px" height="64px"></td>
+        <td>42mm x 58mm Base or Case</td>
+        <td>The Case or Base, aims to hold all the components of the mini-computer so that it is possible to attach the mini-computer in your Power Function construction reliably, as if it were a Lego product. If you want to choose a Case/Base of different size, feel free to do so, but try to buy Universal PCBs of the same size so that the mini-computer is more beautiful.</td>
+    </tr>
+</table>
