@@ -125,6 +125,11 @@ Before we start the assembly of the mini-computer, see all the components we wil
 
 <table>
     <tr>
+        <td>Photo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>Component&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>Description</td>
+    </tr>
+    <tr>
         <td><img src="This-Repository/c-case.png" width="64px" height="64px"></td>
         <td>42mm x 58mm Base or Case</td>
         <td>The Case or Base, aims to hold all the components of the mini-computer so that it is possible to attach the mini-computer in your Power Function construction reliably, as if it were a Lego product. If you want to choose a Case/Base of different size, feel free to do so, but try to buy Universal PCBs of the same size so that the mini-computer is more beautiful.</td>
