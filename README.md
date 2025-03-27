@@ -126,12 +126,20 @@ Before we start the assembly of the mini-computer, see all the components we wil
 <table>
     <tr>
         <td>Photo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>Qty</td>
         <td>Component&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
         <td>Description</td>
     </tr>
     <tr>
         <td><img src="This-Repository/c-case.png" width="64px" height="64px"></td>
-        <td>42mm x 58mm Base or Case</td>
-        <td>The Case or Base, aims to hold all the components of the mini-computer so that it is possible to attach the mini-computer in your Power Function construction reliably, as if it were a Lego product. If you want to choose a Case/Base of different size, feel free to do so, but try to buy Universal PCBs of the same size so that the mini-computer is more beautiful.</td>
+        <td>1x</td>
+        <td>42mm x 58mm<br>Base or Case</td>
+        <td>The Case or Base, aims to hold all the components of the mini-computer so that it is possible to attach the mini-computer in your Power Function construction reliably, as if it were a Lego product. If you want to choose a Case/Base of different size, feel free to do so, but try to buy Universal PCBs of the same size so that the mini-computer is more beautiful. If you want to buy the exact same photo Case, use this <a href="https://pt.aliexpress.com/item/1005007825792651.html">link</a>.</td>
+    </tr>
+    <tr>
+        <td><img src="This-Repository/c-pcb.png" width="64px" height="64px"></td>
+        <td>3x</td>
+        <td>40mm x 60mm<br>Universal PCBs</td>
+        <td>Universal PCBs offer a reliable, cheap, fast, and simple way so we can hold the electronic components we will use in the mini-computer. Make sure you choose PCBs the same size as your Case or Base, chosen. If you choose PCBs sizes differently from the one recommended here, then you can distribute components differently and may require more or less PCBs. With these PCBs of this recommended size, we will make a "mini tower" with 3 floors of components, resulting in a "high" but still compact mini-computer. If you want to buy the exact same photo Universal PCBs, use this <a href="https://pt.aliexpress.com/item/1005006665029598.html">link</a>.</td>
     </tr>
 </table>
