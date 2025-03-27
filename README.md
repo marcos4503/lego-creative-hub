@@ -145,7 +145,13 @@ Before we start the assembly of the mini-computer, see all the components we wil
     <tr>
         <td><img src="This-Repository/c-m3-spacer-1.png" width="64px" height="64px"></td>
         <td>4x</td>
-        <td>15mm Female-Male M3 Spacers With Nut</td>
-        <td>These spacers will be used to fix the first Universal PCB on the Case or Base you have chosen.</td>
+        <td>15mm Female-Male M3 Spacers With Screw and Nut</td>
+        <td>These spacers will be used to fix the first Universal PCB floor on the Case or Base you have chosen. Maybe you need to make 4 holes (with a drill) on the first floor of PCBs so you can attach the PCB in the spacer.</td>
+    </tr>
+    <tr>
+        <td><img src="This-Repository/c-m3-spacer-2.png" width="64px" height="64px"></td>
+        <td>8x</td>
+        <td>20mm Female-Male M3 Spacers With Screw and Nut</td>
+        <td>These spacers will be used to fix the first PCB floor to the second floor of PCB and the second floor of PCB to the third PCB floor. Depending on the Universal PCB you have chosen, you might need to use a drill to widen their gap holes a little.</td>
     </tr>
 </table>
