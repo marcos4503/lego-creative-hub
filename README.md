@@ -58,6 +58,7 @@ Alternative manufacturers such as Mould King, CaDA and generics, manufacture mos
     <tr>
         <td><img src="This-Repository/mk-controller.png" width="128px" height="128px"><br>BT Controller</td>
         <td><img src="This-Repository/mk-receiver.png" width="128px" height="128px"><br>Battery & BT Receiver</td>
+        <td><img src="This-Repository/geekservo-2kg.png" width="128px" height="128px"><br>Geekservo 2Kg Motor</td>
     </tr>
 </table>
 
@@ -138,7 +139,7 @@ In everything related to electronic modules and components, you should buy EVERY
         <td><img src="This-Repository/c-case.png" width="64px" height="64px"></td>
         <td>1x</td>
         <td>42mm x 58mm<br>Base or Case</td>
-        <td>The Case or Base, aims to hold all the components of the mini-computer so that it is possible to attach the mini-computer in your Power Function construction reliably, as if it were a Lego product. If you want to choose a Case/Base of different size, feel free to do so, but try to buy Universal PCBs of the same size so that the mini-computer is more beautiful. If you want to buy the exact same photo Case, use this <a href="https://pt.aliexpress.com/item/1005007825792651.html">link</a>.</td>
+        <td>The Case or Base, aims to hold all the components of the mini-computer so that it is possible to attach the mini-computer in your Power Function construction reliably, as if it were a Lego product. If you want to choose a Case/Base of different size, feel free to do so, but try to buy Universal PCBs of the same size so that the mini-computer is more beautiful. If you want to buy the exact same photo Case, use this <a href="https://pt.aliexpress.com/item/1005007825792651.html">link</a>. Alternatively, you can use Lego Bricks (such as Lift Arms) to create your Case or custom Base by fixing the PCB using something like hot glue, super glue or double sided tape.</td>
     </tr>
     <tr>
         <td><img src="This-Repository/c-pcb.png" width="64px" height="64px"></td>
@@ -169,3 +170,22 @@ You may need to make 4 holes with a drill, on the first floor of PCB, to fix the
 <img src="This-Repository/tower-structure-first-pcb.png" />
 
 But now, let's continue to the next components. Component tables will now be divided into the components required for each PCB floor of the mini-computer.
+
+### First Floor
+
+On this floor will be the components related to the feeding of the mini-computer and processing. So, let's go to them...
+
+<table>
+    <tr>
+        <td>Photo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>Qty</td>
+        <td>Component&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>Description</td>
+    </tr>
+    <tr>
+        <td><img src="This-Repository/c-case.png" width="64px" height="64px"></td>
+        <td>1x</td>
+        <td>name</td>
+        <td>temp</td>
+    </tr>
+</table>
