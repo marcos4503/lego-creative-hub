@@ -58,7 +58,7 @@ Alternative manufacturers such as Mould King, CaDA and generics, manufacture mos
     <tr>
         <td><img src="This-Repository/mk-controller.png" width="128px" height="128px"><br>BT Controller</td>
         <td><img src="This-Repository/mk-receiver.png" width="128px" height="128px"><br>Battery & BT Receiver</td>
-        <td><img src="This-Repository/geekservo-2kg.png" width="128px" height="128px"><br>Geekservo 2Kg Motor</td>
+        <td><img src="This-Repository/geekservo-2kg.png" width="128px" height="128px"><br>GeekServo 2Kg Motor</td>
     </tr>
 </table>
 
