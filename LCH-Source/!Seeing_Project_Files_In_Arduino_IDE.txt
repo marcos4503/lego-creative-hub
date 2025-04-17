@@ -1,0 +1,10 @@
+To view all these files in this project, inside the Arduino IDE, on the "Sketchbook" tab,
+follow the steps below ...
+
+1. Open this project. To do this, open the "LegoCreativeHub/LegoCreativeHub.ino" file in
+   the Arduino IDE.
+2. Go to "File", then in "Preferences..."
+3. In "Sketchbook location", click "Browse" and enter the directory of the folder containing
+   this TXT file.
+4. Mark the Checkbox that says "Show Files Inside Sketches".
+5. Click "OK" to apply, then open the "Sketchbook" tab.
