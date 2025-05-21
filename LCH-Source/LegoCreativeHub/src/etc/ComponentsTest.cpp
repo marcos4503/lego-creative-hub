@@ -1,14 +1,43 @@
 //Include dependency files
 #include <Arduino.h>
+#include "../libraries/Button2/src/Button2.h"
 
 //Private variables
 unsigned long lastTestRunTimeOf_voltageSensor = 0;
+bool alreadyDefinedRButtonCallback = false;
 
 //Initialization methods
 
 void InitializeComponentTest(){
   //This method should be called on "setup()" of main "ino" file, to initialize the Serial Communiction to do the tests
   Serial.begin(115200);
+
+  //Warn that the test module was setuped
+  Serial.println("The LCH Components Test was prepared!");
+}
+
+//Auxiliar methods
+
+void RButtonTapped(Button2& btn){
+  Serial.println("R Button tapped!");
+}
+
+void RButtonPressed(Button2& btn){
+  Serial.println("R Button pressed!");
+}
+
+void RButtonReleased(Button2& btn){
+  Serial.print("R Button released! (Pressed during ");
+  Serial.print(btn.wasPressedFor());
+  Serial.println(" ms)");
+}
+
+void RButtonDoubleTapped(Button2& btn){
+  Serial.println("R Button was double tapped!");
+}
+
+void RButtonTripleTapped(Button2& btn){
+  Serial.println("R Button was triple tapped!");
 }
 
 //Components test methods
@@ -40,4 +69,23 @@ void VoltageSensorTest(int pin_voltageSensor){
     //Update the last run time
     lastTestRunTimeOf_voltageSensor = currentMillis;
   }
+}
+
+void RButtonTest(Button2& rButtonRef){
+  //If not defined the R Button callback yet, define it
+  if (alreadyDefinedRButtonCallback == false){
+    //Define callbacks of R Button
+    rButtonRef.setTapHandler(RButtonTapped);
+    rButtonRef.setPressedHandler(RButtonPressed);
+    rButtonRef.setReleasedHandler(RButtonReleased);
+    rButtonRef.setDoubleClickHandler(RButtonDoubleTapped);
+    rButtonRef.setTripleClickHandler(RButtonTripleTapped);
+
+    //Inform that the R Button callback was defined
+    alreadyDefinedRButtonCallback = true;
+  }
+}
+
+void LButtonTest(int pin_lButton){
+
 }

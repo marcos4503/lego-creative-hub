@@ -1,5 +1,10 @@
 //Include dependency files
 #include <PinsSetup.h>
+#include "src/libraries/Button2/src/Button2.h"
+
+//Initialize needed libraries
+Button2 libRef_rButton;
+Button2 libRef_lButton;
 
 //Include optional test files
 #include "src/etc/ComponentsTest.h"
@@ -7,6 +12,9 @@
 //Initialize the software
 
 void setup() {
+  //Wait initialization time
+  delay(1000);
+
   //Initialize the Pins
   pinMode(pin_voltageSensor, INPUT);
   pinMode(pin_rButton, INPUT);
@@ -46,6 +54,12 @@ void setup() {
   digitalWrite(pin_gsPort2, LOW);
   
   //---//
+
+  //Initialize methods. Needed to some libraries receive the processing setup from the ESP32.
+  libRef_rButton.begin(pin_rButton, INPUT_PULLUP, false);
+  libRef_lButton.begin(pin_lButton, INPUT_PULLUP, false);
+
+  //---//
   
   //Test method. Uncomment if you need to run some Component Test. Tests can return messages on Serial Monitor.
   InitializeComponentTest();
@@ -56,12 +70,19 @@ void setup() {
 //Run the software on loop
 
 void loop() {
-  //Tests methods. Uncomment if you need to run some Component Test. Tests can return messages on Serial Monitor.
-  //VoltageSensorTest(pin_voltageSensor);
+  //Loop methods. Needed to some libraries receive the processing loop from the ESP32.
+  libRef_rButton.loop();
+  libRef_lButton.loop();
 
   //---//
 
+  //Tests methods. Uncomment if you need to run some Component Test. Tests can return messages on Serial Monitor.
+  //VoltageSensorTest(pin_voltageSensor);
+  //RButtonTest(libRef_rButton);
 
+  //---//
+
+  //...
 }
 
 
