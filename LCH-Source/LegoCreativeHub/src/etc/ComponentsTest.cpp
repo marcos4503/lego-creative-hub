@@ -71,7 +71,7 @@ void VoltageSensorTest(int pin_voltageSensor){
   }
 }
 
-void RButtonTest(Button2& rButtonRef){
+void RButtonTest(int pin_rButton, Button2& rButtonRef){
   //If not defined the R Button callback yet, define it
   if (alreadyDefinedRButtonCallback == false){
     //Define callbacks of R Button
@@ -84,6 +84,14 @@ void RButtonTest(Button2& rButtonRef){
     //Inform that the R Button callback was defined
     alreadyDefinedRButtonCallback = true;
   }
+
+  //Reading in raw mode
+  //if (digitalRead(pin_rButton) == HIGH){
+  //  digitalWrite(pin_output, HIGH);
+  //}
+  //if (digitalRead(pin_rButton) == LOW){
+  //  digitalWrite(pin_output, LOW);
+  //}
 }
 
 void LButtonTest(int pin_lButton){

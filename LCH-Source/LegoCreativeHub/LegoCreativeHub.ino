@@ -78,7 +78,7 @@ void loop() {
 
   //Tests methods. Uncomment if you need to run some Component Test. Tests can return messages on Serial Monitor.
   //VoltageSensorTest(pin_voltageSensor);
-  //RButtonTest(libRef_rButton);
+  //RButtonTest(pin_rButton, libRef_rButton);
 
   //---//
 

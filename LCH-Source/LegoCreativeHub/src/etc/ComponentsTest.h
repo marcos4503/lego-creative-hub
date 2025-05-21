@@ -9,7 +9,7 @@
 
 void InitializeComponentTest();
 void VoltageSensorTest(int pin_voltageSensor);
-void RButtonTest(Button2& rButtonRef);
+void RButtonTest(int pin_rButton, Button2& rButtonRef);
 void RButtonTapped(Button2& btn);
 void RButtonPressed(Button2& btn);
 void RButtonReleased(Button2& btn);
