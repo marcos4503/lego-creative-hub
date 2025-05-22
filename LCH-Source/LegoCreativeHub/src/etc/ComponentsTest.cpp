@@ -5,6 +5,9 @@
 //Private variables
 unsigned long lastTestRunTimeOf_voltageSensor = 0;
 bool alreadyDefinedRButtonCallback = false;
+unsigned long lastTestRunTimeOf_potentiometer = 0;
+bool alreadyDefinedLButtonCallback = false;
+unsigned long lastTestRunTimeOf_pf1Port = 0;
 
 //Initialization methods
 
@@ -38,6 +41,28 @@ void RButtonDoubleTapped(Button2& btn){
 
 void RButtonTripleTapped(Button2& btn){
   Serial.println("R Button was triple tapped!");
+}
+
+void LButtonTapped(Button2& btn){
+  Serial.println("L Button tapped!");
+}
+
+void LButtonPressed(Button2& btn){
+  Serial.println("L Button pressed!");
+}
+
+void LButtonReleased(Button2& btn){
+  Serial.print("L Button released! (Pressed during ");
+  Serial.print(btn.wasPressedFor());
+  Serial.println(" ms)");
+}
+
+void LButtonDoubleTapped(Button2& btn){
+  Serial.println("L Button was double tapped!");
+}
+
+void LButtonTripleTapped(Button2& btn){
+  Serial.println("L Button was triple tapped!");
 }
 
 //Components test methods
@@ -94,6 +119,104 @@ void RButtonTest(int pin_rButton, Button2& rButtonRef){
   //}
 }
 
-void LButtonTest(int pin_lButton){
+void PotentiometerTest(int pin_potentiometer){
+  //Get current milliseconds time
+  int currentMillis = millis();
 
+  //If can run the test, run it
+  if ((currentMillis - lastTestRunTimeOf_potentiometer) >= 1000){
+    //Read the current analog voltage value of potentiometer
+    int potentiometerValue = analogRead(pin_potentiometer);
+
+    //With a standard 9mm Shaft Potentiometer, with recommended LCH connections
+    //In fully rotated potentiometer, the "potentiometerValue" value is 4095
+    //In fully zero potentiometer, the "potentiometerValue" value is 0
+
+    //Convert the potentiometer value to a percent value
+    float percentValue = ((map(potentiometerValue, 0, 4095, 0, 100) / 100.0) * 100.0);
+
+    //Print the result to Serial Monitor
+    Serial.print("Potentiometer Result: ");
+    Serial.println(percentValue, 2);
+
+    //Update the last run time
+    lastTestRunTimeOf_potentiometer = currentMillis;
+  }
+}
+
+void LButtonTest(int pin_lButton, Button2& lButtonRef){
+  //If not defined the L Button callback yet, define it
+  if (alreadyDefinedLButtonCallback == false){
+    //Define callbacks of L Button
+    lButtonRef.setTapHandler(LButtonTapped);
+    lButtonRef.setPressedHandler(LButtonPressed);
+    lButtonRef.setReleasedHandler(LButtonReleased);
+    lButtonRef.setDoubleClickHandler(LButtonDoubleTapped);
+    lButtonRef.setTripleClickHandler(LButtonTripleTapped);
+
+    //Inform that the L Button callback was defined
+    alreadyDefinedLButtonCallback = true;
+  }
+
+  //Reading in raw mode
+  //if (digitalRead(pin_lButton) == HIGH){
+  //  digitalWrite(pin_output, HIGH);
+  //}
+  //if (digitalRead(pin_lButton) == LOW){
+  //  digitalWrite(pin_output, LOW);
+  //}
+}
+
+void PF1PortTest(int pin_pfPort1_c1, int pin_pfPort1_c2){
+  //Get current milliseconds time
+  int currentMillis = millis();
+  if ((currentMillis - lastTestRunTimeOf_pf1Port) >= 13000){
+    //Update the last run time
+    lastTestRunTimeOf_pf1Port = currentMillis;
+  }
+    
+
+  //This will run in Power Function Port 1...
+
+  //Stop the Power Function Port 1...
+  if ((currentMillis - lastTestRunTimeOf_pf1Port) >= 0 && (currentMillis - lastTestRunTimeOf_pf1Port) < 500){
+    //Send signal to Stop
+    analogWrite(pin_pfPort1_c1, 0);
+    analogWrite(pin_pfPort1_c2, 0);
+  }
+
+  //Rotate in Speed Min to RIGHT>>>
+  if ((currentMillis - lastTestRunTimeOf_pf1Port) >= 500 && (currentMillis - lastTestRunTimeOf_pf1Port) < 3500){
+    //Send signal to Right
+    digitalWrite(pin_pfPort1_c1, LOW);
+    analogWrite(pin_pfPort1_c2, 130);
+  }
+
+  //Rotate in Speed Max to RIGHT>>>
+  if ((currentMillis - lastTestRunTimeOf_pf1Port) >= 3500 && (currentMillis - lastTestRunTimeOf_pf1Port) < 6500){
+    //Send signal to Right
+    digitalWrite(pin_pfPort1_c1, LOW);
+    analogWrite(pin_pfPort1_c2, 255);
+  }
+
+  //Stop the Power Function Port 1...
+  if ((currentMillis - lastTestRunTimeOf_pf1Port) >= 6500 && (currentMillis - lastTestRunTimeOf_pf1Port) < 7000){
+    //Send signal to Stop
+    analogWrite(pin_pfPort1_c1, 0);
+    analogWrite(pin_pfPort1_c2, 0);
+  }
+
+  //Rotate in Speed Min to LEFT<<<
+  if ((currentMillis - lastTestRunTimeOf_pf1Port) >= 7000 && (currentMillis - lastTestRunTimeOf_pf1Port) < 10000){
+    //Send signal to Left
+    analogWrite(pin_pfPort1_c1, 130);
+    digitalWrite(pin_pfPort1_c2, LOW);
+  }
+
+  //Rotate in Speed Max to LEFT<<<
+  if ((currentMillis - lastTestRunTimeOf_pf1Port) >= 10000 && (currentMillis - lastTestRunTimeOf_pf1Port) < 13000){
+    //Send signal to Left
+    analogWrite(pin_pfPort1_c1, 255);
+    digitalWrite(pin_pfPort1_c2, LOW);
+  }
 }
