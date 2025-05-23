@@ -1,10 +1,17 @@
 //Include dependency files
 #include <PinsSetup.h>
 #include "src/libraries/Button2/src/Button2.h"
+#include <SPI.h>
+#include <Wire.h>
+#include "src/libraries/Adafruit-GFX-Library/Adafruit_GFX.h"
+#include "src/libraries/Adafruit_SSD1306/Adafruit_SSD1306.h"
 
 //Initialize needed libraries
 Button2 libRef_rButton;
 Button2 libRef_lButton;
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 32
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 //Include optional test files
 #include "src/etc/ComponentsTest.h"
@@ -12,9 +19,6 @@ Button2 libRef_lButton;
 //Initialize the software
 
 void setup() {
-  //Wait initialization time
-  delay(1000);
-
   //Initialize the Pins
   pinMode(pin_voltageSensor, INPUT);
   pinMode(pin_rButton, INPUT);
@@ -58,13 +62,31 @@ void setup() {
   //Initialize methods. Needed to some libraries receive the processing setup from the ESP32.
   libRef_rButton.begin(pin_rButton, INPUT_PULLUP, false);
   libRef_lButton.begin(pin_lButton, INPUT_PULLUP, false);
+  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {   //<--- Address 0x3D for 128x64
+    //Serial.println(F("SSD1306 allocation failed"));
+    for(;;);
+  }
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+  display.setCursor(13, 14);
+  display.println("Lego Creative Hub");
+  display.display();
+
+  //---//
+
+  //Wait more initialization time
+  delay(1000);
 
   //---//
   
   //Test method. Uncomment if you need to run some Component Test. Tests can return messages on Serial Monitor.
   InitializeComponentTest();
+  return;
 
   //---//
+
+  //...
 }
 
 //Run the software on loop
@@ -82,6 +104,20 @@ void loop() {
   //PotentiometerTest(pin_potentiometer);
   //LButtonTest(pin_lButton, libRef_lButton);
   //PF1PortTest(pin_pfPort1_c1, pin_pfPort1_c2);
+  //PF2PortTest(pin_pfPort2_c1, pin_pfPort2_c2);
+  //PF3PortTest(pin_pfPort3_c1, pin_pfPort3_c2);
+  //PF4PortTest(pin_pfPort4_c1, pin_pfPort4_c2);
+  //EMPort1Test(pin_emPort1);
+  //EMPort2Test(pin_emPort2);
+  //EMPort3Test(pin_emPort3);
+  //EMPort4Test(pin_emPort4);
+  //EMPort5Test(pin_emPort5);
+  //EMPort6Test(pin_emPort6);
+  //EMPort7Test(pin_emPort7);
+  //EMPort8Test(pin_emPort8);
+  
+  //Required for tests methods. Uncomment if you need to run some Component Test. Tests can return messages on Serial Monitor.
+  return;
 
   //---//
 

@@ -8,6 +8,25 @@ bool alreadyDefinedRButtonCallback = false;
 unsigned long lastTestRunTimeOf_potentiometer = 0;
 bool alreadyDefinedLButtonCallback = false;
 unsigned long lastTestRunTimeOf_pf1Port = 0;
+unsigned long lastTestRunTimeOf_pf2Port = 0;
+unsigned long lastTestRunTimeOf_pf3Port = 0;
+unsigned long lastTestRunTimeOf_pf4Port = 0;
+unsigned long lastTestRunTimeOf_em1Port = 0;
+bool status_em1Port = false;
+unsigned long lastTestRunTimeOf_em2Port = 0;
+bool status_em2Port = false;
+unsigned long lastTestRunTimeOf_em3Port = 0;
+bool status_em3Port = false;
+unsigned long lastTestRunTimeOf_em4Port = 0;
+bool status_em4Port = false;
+unsigned long lastTestRunTimeOf_em5Port = 0;
+bool status_em5Port = false;
+unsigned long lastTestRunTimeOf_em6Port = 0;
+bool status_em6Port = false;
+unsigned long lastTestRunTimeOf_em7Port = 0;
+bool status_em7Port = false;
+unsigned long lastTestRunTimeOf_em8Port = 0;
+bool status_em8Port = false;
 
 //Initialization methods
 
@@ -218,5 +237,367 @@ void PF1PortTest(int pin_pfPort1_c1, int pin_pfPort1_c2){
     //Send signal to Left
     analogWrite(pin_pfPort1_c1, 255);
     digitalWrite(pin_pfPort1_c2, LOW);
+  }
+}
+
+void PF2PortTest(int pin_pfPort2_c1, int pin_pfPort2_c2){
+  //Get current milliseconds time
+  int currentMillis = millis();
+  if ((currentMillis - lastTestRunTimeOf_pf2Port) >= 13000){
+    //Update the last run time
+    lastTestRunTimeOf_pf2Port = currentMillis;
+  }
+    
+
+  //This will run in Power Function Port 1...
+
+  //Stop the Power Function Port 1...
+  if ((currentMillis - lastTestRunTimeOf_pf2Port) >= 0 && (currentMillis - lastTestRunTimeOf_pf2Port) < 500){
+    //Send signal to Stop
+    analogWrite(pin_pfPort2_c1, 0);
+    analogWrite(pin_pfPort2_c2, 0);
+  }
+
+  //Rotate in Speed Min to RIGHT>>>
+  if ((currentMillis - lastTestRunTimeOf_pf2Port) >= 500 && (currentMillis - lastTestRunTimeOf_pf2Port) < 3500){
+    //Send signal to Right
+    digitalWrite(pin_pfPort2_c1, LOW);
+    analogWrite(pin_pfPort2_c2, 130);
+  }
+
+  //Rotate in Speed Max to RIGHT>>>
+  if ((currentMillis - lastTestRunTimeOf_pf2Port) >= 3500 && (currentMillis - lastTestRunTimeOf_pf2Port) < 6500){
+    //Send signal to Right
+    digitalWrite(pin_pfPort2_c1, LOW);
+    analogWrite(pin_pfPort2_c2, 255);
+  }
+
+  //Stop the Power Function Port 1...
+  if ((currentMillis - lastTestRunTimeOf_pf2Port) >= 6500 && (currentMillis - lastTestRunTimeOf_pf2Port) < 7000){
+    //Send signal to Stop
+    analogWrite(pin_pfPort2_c1, 0);
+    analogWrite(pin_pfPort2_c2, 0);
+  }
+
+  //Rotate in Speed Min to LEFT<<<
+  if ((currentMillis - lastTestRunTimeOf_pf2Port) >= 7000 && (currentMillis - lastTestRunTimeOf_pf2Port) < 10000){
+    //Send signal to Left
+    analogWrite(pin_pfPort2_c1, 130);
+    digitalWrite(pin_pfPort2_c2, LOW);
+  }
+
+  //Rotate in Speed Max to LEFT<<<
+  if ((currentMillis - lastTestRunTimeOf_pf2Port) >= 10000 && (currentMillis - lastTestRunTimeOf_pf2Port) < 13000){
+    //Send signal to Left
+    analogWrite(pin_pfPort2_c1, 255);
+    digitalWrite(pin_pfPort2_c2, LOW);
+  }
+}
+
+void PF3PortTest(int pin_pfPort3_c1, int pin_pfPort3_c2){
+  //Get current milliseconds time
+  int currentMillis = millis();
+  if ((currentMillis - lastTestRunTimeOf_pf3Port) >= 13000){
+    //Update the last run time
+    lastTestRunTimeOf_pf3Port = currentMillis;
+  }
+    
+
+  //This will run in Power Function Port 1...
+
+  //Stop the Power Function Port 1...
+  if ((currentMillis - lastTestRunTimeOf_pf3Port) >= 0 && (currentMillis - lastTestRunTimeOf_pf3Port) < 500){
+    //Send signal to Stop
+    analogWrite(pin_pfPort3_c1, 0);
+    analogWrite(pin_pfPort3_c2, 0);
+  }
+
+  //Rotate in Speed Min to RIGHT>>>
+  if ((currentMillis - lastTestRunTimeOf_pf3Port) >= 500 && (currentMillis - lastTestRunTimeOf_pf3Port) < 3500){
+    //Send signal to Right
+    digitalWrite(pin_pfPort3_c1, LOW);
+    analogWrite(pin_pfPort3_c2, 130);
+  }
+
+  //Rotate in Speed Max to RIGHT>>>
+  if ((currentMillis - lastTestRunTimeOf_pf3Port) >= 3500 && (currentMillis - lastTestRunTimeOf_pf3Port) < 6500){
+    //Send signal to Right
+    digitalWrite(pin_pfPort3_c1, LOW);
+    analogWrite(pin_pfPort3_c2, 255);
+  }
+
+  //Stop the Power Function Port 1...
+  if ((currentMillis - lastTestRunTimeOf_pf3Port) >= 6500 && (currentMillis - lastTestRunTimeOf_pf3Port) < 7000){
+    //Send signal to Stop
+    analogWrite(pin_pfPort3_c1, 0);
+    analogWrite(pin_pfPort3_c2, 0);
+  }
+
+  //Rotate in Speed Min to LEFT<<<
+  if ((currentMillis - lastTestRunTimeOf_pf3Port) >= 7000 && (currentMillis - lastTestRunTimeOf_pf3Port) < 10000){
+    //Send signal to Left
+    analogWrite(pin_pfPort3_c1, 130);
+    digitalWrite(pin_pfPort3_c2, LOW);
+  }
+
+  //Rotate in Speed Max to LEFT<<<
+  if ((currentMillis - lastTestRunTimeOf_pf3Port) >= 10000 && (currentMillis - lastTestRunTimeOf_pf3Port) < 13000){
+    //Send signal to Left
+    analogWrite(pin_pfPort3_c1, 255);
+    digitalWrite(pin_pfPort3_c2, LOW);
+  }
+}
+
+void PF4PortTest(int pin_pfPort4_c1, int pin_pfPort4_c2){
+  //Get current milliseconds time
+  int currentMillis = millis();
+  if ((currentMillis - lastTestRunTimeOf_pf4Port) >= 13000){
+    //Update the last run time
+    lastTestRunTimeOf_pf4Port = currentMillis;
+  }
+    
+
+  //This will run in Power Function Port 1...
+
+  //Stop the Power Function Port 1...
+  if ((currentMillis - lastTestRunTimeOf_pf4Port) >= 0 && (currentMillis - lastTestRunTimeOf_pf4Port) < 500){
+    //Send signal to Stop
+    analogWrite(pin_pfPort4_c1, 0);
+    analogWrite(pin_pfPort4_c2, 0);
+  }
+
+  //Rotate in Speed Min to RIGHT>>>
+  if ((currentMillis - lastTestRunTimeOf_pf4Port) >= 500 && (currentMillis - lastTestRunTimeOf_pf4Port) < 3500){
+    //Send signal to Right
+    digitalWrite(pin_pfPort4_c1, LOW);
+    analogWrite(pin_pfPort4_c2, 130);
+  }
+
+  //Rotate in Speed Max to RIGHT>>>
+  if ((currentMillis - lastTestRunTimeOf_pf4Port) >= 3500 && (currentMillis - lastTestRunTimeOf_pf4Port) < 6500){
+    //Send signal to Right
+    digitalWrite(pin_pfPort4_c1, LOW);
+    analogWrite(pin_pfPort4_c2, 255);
+  }
+
+  //Stop the Power Function Port 1...
+  if ((currentMillis - lastTestRunTimeOf_pf4Port) >= 6500 && (currentMillis - lastTestRunTimeOf_pf4Port) < 7000){
+    //Send signal to Stop
+    analogWrite(pin_pfPort4_c1, 0);
+    analogWrite(pin_pfPort4_c2, 0);
+  }
+
+  //Rotate in Speed Min to LEFT<<<
+  if ((currentMillis - lastTestRunTimeOf_pf4Port) >= 7000 && (currentMillis - lastTestRunTimeOf_pf4Port) < 10000){
+    //Send signal to Left
+    analogWrite(pin_pfPort4_c1, 130);
+    digitalWrite(pin_pfPort4_c2, LOW);
+  }
+
+  //Rotate in Speed Max to LEFT<<<
+  if ((currentMillis - lastTestRunTimeOf_pf4Port) >= 10000 && (currentMillis - lastTestRunTimeOf_pf4Port) < 13000){
+    //Send signal to Left
+    analogWrite(pin_pfPort4_c1, 255);
+    digitalWrite(pin_pfPort4_c2, LOW);
+  }
+}
+
+void EMPort1Test(int pin_emPort1){
+  //Get current milliseconds time
+  int currentMillis = millis();
+
+  //If can run the test, run it
+  if ((currentMillis - lastTestRunTimeOf_em1Port) >= 150){
+    //Update the last run time
+    lastTestRunTimeOf_em1Port = currentMillis;
+
+    //Send a blink signal in Extra Module Port 1
+    if (status_em1Port == false){
+      pinMode(pin_emPort1, OUTPUT);
+      digitalWrite(pin_emPort1, LOW);
+      status_em1Port = true;
+      return;
+    }
+    if (status_em1Port == true){
+      pinMode(pin_emPort1, OUTPUT);
+      digitalWrite(pin_emPort1, HIGH);
+      status_em1Port = false;
+      return;
+    }
+  }
+}
+
+void EMPort2Test(int pin_emPort2){
+  //Get current milliseconds time
+  int currentMillis = millis();
+
+  //If can run the test, run it
+  if ((currentMillis - lastTestRunTimeOf_em2Port) >= 150){
+    //Update the last run time
+    lastTestRunTimeOf_em2Port = currentMillis;
+
+    //Send a blink signal in Extra Module Port 2
+    if (status_em2Port == false){
+      pinMode(pin_emPort2, OUTPUT);
+      digitalWrite(pin_emPort2, LOW);
+      status_em2Port = true;
+      return;
+    }
+    if (status_em2Port == true){
+      pinMode(pin_emPort2, OUTPUT);
+      digitalWrite(pin_emPort2, HIGH);
+      status_em2Port = false;
+      return;
+    }
+  }
+}
+
+void EMPort3Test(int pin_emPort3){
+  //Get current milliseconds time
+  int currentMillis = millis();
+
+  //If can run the test, run it
+  if ((currentMillis - lastTestRunTimeOf_em3Port) >= 150){
+    //Update the last run time
+    lastTestRunTimeOf_em3Port = currentMillis;
+
+    //Send a blink signal in Extra Module Port 3
+    if (status_em3Port == false){
+      pinMode(pin_emPort3, OUTPUT);
+      digitalWrite(pin_emPort3, LOW);
+      status_em3Port = true;
+      return;
+    }
+    if (status_em3Port == true){
+      pinMode(pin_emPort3, OUTPUT);
+      digitalWrite(pin_emPort3, HIGH);
+      status_em3Port = false;
+      return;
+    }
+  }
+}
+
+void EMPort4Test(int pin_emPort4){
+  //Get current milliseconds time
+  int currentMillis = millis();
+
+  //If can run the test, run it
+  if ((currentMillis - lastTestRunTimeOf_em4Port) >= 150){
+    //Update the last run time
+    lastTestRunTimeOf_em4Port = currentMillis;
+
+    //Send a blink signal in Extra Module Port 4
+    if (status_em4Port == false){
+      pinMode(pin_emPort4, OUTPUT);
+      digitalWrite(pin_emPort4, LOW);
+      status_em4Port = true;
+      return;
+    }
+    if (status_em4Port == true){
+      pinMode(pin_emPort4, OUTPUT);
+      digitalWrite(pin_emPort4, HIGH);
+      status_em4Port = false;
+      return;
+    }
+  }
+}
+
+void EMPort5Test(int pin_emPort5){
+  //Get current milliseconds time
+  int currentMillis = millis();
+
+  //If can run the test, run it
+  if ((currentMillis - lastTestRunTimeOf_em5Port) >= 150){
+    //Update the last run time
+    lastTestRunTimeOf_em5Port = currentMillis;
+
+    //Send a blink signal in Extra Module Port 5
+    if (status_em5Port == false){
+      pinMode(pin_emPort5, OUTPUT);
+      digitalWrite(pin_emPort5, LOW);
+      status_em5Port = true;
+      return;
+    }
+    if (status_em5Port == true){
+      pinMode(pin_emPort5, OUTPUT);
+      digitalWrite(pin_emPort5, HIGH);
+      status_em5Port = false;
+      return;
+    }
+  }
+}
+
+void EMPort6Test(int pin_emPort6){
+  //Get current milliseconds time
+  int currentMillis = millis();
+
+  //If can run the test, run it
+  if ((currentMillis - lastTestRunTimeOf_em6Port) >= 150){
+    //Update the last run time
+    lastTestRunTimeOf_em6Port = currentMillis;
+
+    //Send a blink signal in Extra Module Port 6
+    if (status_em6Port == false){
+      pinMode(pin_emPort6, OUTPUT);
+      digitalWrite(pin_emPort6, LOW);
+      status_em6Port = true;
+      return;
+    }
+    if (status_em6Port == true){
+      pinMode(pin_emPort6, OUTPUT);
+      digitalWrite(pin_emPort6, HIGH);
+      status_em6Port = false;
+      return;
+    }
+  }
+}
+
+void EMPort7Test(int pin_emPort7){
+  //Get current milliseconds time
+  int currentMillis = millis();
+
+  //If can run the test, run it
+  if ((currentMillis - lastTestRunTimeOf_em7Port) >= 150){
+    //Update the last run time
+    lastTestRunTimeOf_em7Port = currentMillis;
+
+    //Send a blink signal in Extra Module Port 7
+    if (status_em7Port == false){
+      pinMode(pin_emPort7, OUTPUT);
+      digitalWrite(pin_emPort7, LOW);
+      status_em7Port = true;
+      return;
+    }
+    if (status_em7Port == true){
+      pinMode(pin_emPort7, OUTPUT);
+      digitalWrite(pin_emPort7, HIGH);
+      status_em7Port = false;
+      return;
+    }
+  }
+}
+
+void EMPort8Test(int pin_emPort8){
+  //Get current milliseconds time
+  int currentMillis = millis();
+
+  //If can run the test, run it
+  if ((currentMillis - lastTestRunTimeOf_em8Port) >= 150){
+    //Update the last run time
+    lastTestRunTimeOf_em8Port = currentMillis;
+
+    //Send a blink signal in Extra Module Port 8
+    if (status_em8Port == false){
+      pinMode(pin_emPort8, OUTPUT);
+      digitalWrite(pin_emPort8, LOW);
+      status_em8Port = true;
+      return;
+    }
+    if (status_em8Port == true){
+      pinMode(pin_emPort8, OUTPUT);
+      digitalWrite(pin_emPort8, HIGH);
+      status_em8Port = false;
+      return;
+    }
   }
 }
