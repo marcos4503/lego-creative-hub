@@ -1,6 +1,8 @@
 //Include dependency files
 #include <Arduino.h>
 #include "../libraries/Button2/src/Button2.h"
+#include "../libraries/ezBuzzer/src/ezBuzzer.h"
+#include "../libraries/ESP32Servo/src/ESP32Servo.h"
 
 //Private variables
 unsigned long lastTestRunTimeOf_voltageSensor = 0;
@@ -27,6 +29,13 @@ unsigned long lastTestRunTimeOf_em7Port = 0;
 bool status_em7Port = false;
 unsigned long lastTestRunTimeOf_em8Port = 0;
 bool status_em8Port = false;
+unsigned long lastTestRunTimeOf_buzzer = 0;
+bool runnedStage1_buzzer = false;
+bool runnedStage2_buzzer = false;
+int melodieNotes_buzzer[] = {     NOTE_B0, NOTE_E1, NOTE_A1, NOTE_D2, NOTE_G2, NOTE_C3, NOTE_F3, NOTE_B3, NOTE_F4, NOTE_B4, NOTE_F5, NOTE_A5, NOTE_D6, NOTE_G6, NOTE_C7, NOTE_F7, NOTE_B7, NOTE_DS8 };  //<- Notes in Melody
+int melodieNotesDurations_buzzer[] = {  4,       4,       4,       4,       4,       4,       4,       4,       4,       4,       4,       4,       4,       4,       4,       4,       4,        4 };  //<- Notes Tempo, 1 = full, 2 = half note, 4 = quarter note, 8 = eighth note
+unsigned long lastTestRunTimeOf_gs1Port = 0;
+unsigned long lastTestRunTimeOf_gs2Port = 0;
 
 //Initialization methods
 
@@ -599,5 +608,202 @@ void EMPort8Test(int pin_emPort8){
       status_em8Port = false;
       return;
     }
+  }
+}
+
+void BuzzerTest(int pin_buzzer, ezBuzzer& buzzerRef){
+  //Get current milliseconds time
+  int currentMillis = millis();
+  if ((currentMillis - lastTestRunTimeOf_buzzer) >= 8000){
+    //Update the last run time
+    lastTestRunTimeOf_buzzer = currentMillis;
+    runnedStage1_buzzer = false;
+    runnedStage2_buzzer = false;
+  }
+    
+
+  //This will play the Buzzer in test mode
+
+  //Buzzer status
+  //0 - BUZZER_IDLE       - Buzzer is not playing anything.
+  //1 - BUZZER_BEEP_DELAY - Buzzer is playing a beep, but is in the delay part.
+  //2 - BUZZER_BEEPING    - Buzzer is playing a beep.
+  //3 - BUZZER_MELODY     - Buzzer is playing a melody.
+
+  //Run stage 1 of test
+  if ((currentMillis - lastTestRunTimeOf_buzzer) >= 0 && (currentMillis - lastTestRunTimeOf_buzzer) < 1000){
+    if (runnedStage1_buzzer == false){
+      //Show the current status of the Buzzer
+      Serial.println("Buzzer Stopped.");
+      Serial.print("Buzzer Current State: ");
+      Serial.println(buzzerRef.getState());
+
+      //Play a beep
+      Serial.println("Playing a Beep...");
+      if (buzzerRef.getState() != 0)
+        buzzerRef.stop();
+      if (buzzerRef.getState() == 0)
+        buzzerRef.beep(100);   //<-- Generates a 100ms beep
+      Serial.print("Buzzer Current State: ");
+      Serial.println(buzzerRef.getState());
+
+      //Inform that was runned
+      runnedStage1_buzzer = true;
+    }
+  }
+
+  //Run stage 2 of test
+  if ((currentMillis - lastTestRunTimeOf_buzzer) >= 3000 && (currentMillis - lastTestRunTimeOf_buzzer) < 7000){
+    if (runnedStage2_buzzer == false){
+      //Show the current status of the Buzzer
+      Serial.println("Buzzer Stopped.");
+      Serial.print("Buzzer Current State: ");
+      Serial.println(buzzerRef.getState());
+
+      //Play a melody
+      Serial.println("Playing a Melody...");
+      if (buzzerRef.getState() != 0)
+        buzzerRef.stop();
+      if (buzzerRef.getState() == 0)
+        buzzerRef.playMelody(melodieNotes_buzzer, melodieNotesDurations_buzzer, (sizeof(melodieNotesDurations_buzzer) / sizeof(int)));   //<- Play the Melody, duration varies according to quantity of Notes
+      Serial.print("Buzzer Current State: ");
+      Serial.println(buzzerRef.getState());
+
+      //Inform that was runned
+      runnedStage2_buzzer = true;
+    }
+  }
+
+  //Run stage 3 of test
+  if ((currentMillis - lastTestRunTimeOf_buzzer) >= 7000 && (currentMillis - lastTestRunTimeOf_buzzer) < 8000){ }
+}
+
+void GS1PortTest(int pin_gsPort1, Servo& servoRef){
+  //Get current milliseconds time
+  int currentMillis = millis();
+  if ((currentMillis - lastTestRunTimeOf_gs1Port) >= 21500){
+    //Update the last run time
+    lastTestRunTimeOf_gs1Port = currentMillis;
+  }
+    
+
+  //This will run in GeekServo Port 1...
+
+  //GeekServos can rotate until 360°, so, to use a GeekServo in -90°~90° the degrees is different...
+  //-90° is 45°  on GeekServo
+  //0°   is 90°  on GeekServo
+  //90°  is 135° on GeekServo
+
+  //Reset the GeekServo Port 1...
+  if ((currentMillis - lastTestRunTimeOf_gs1Port) >= 0 && (currentMillis - lastTestRunTimeOf_gs1Port) < 500){
+    //Send signal to 0°
+    servoRef.write(90);
+  }
+
+  //Rotate to RIGHT>>>
+  if ((currentMillis - lastTestRunTimeOf_gs1Port) >= 500 && (currentMillis - lastTestRunTimeOf_gs1Port) < 3500){
+    //Send signal to 30°
+    servoRef.write(105);
+  }
+
+  //Rotate to RIGHT>>>
+  if ((currentMillis - lastTestRunTimeOf_gs1Port) >= 3500 && (currentMillis - lastTestRunTimeOf_gs1Port) < 6500){
+    //Send signal to 60°
+    servoRef.write(120);
+  }
+
+  //Rotate to RIGHT>>>
+  if ((currentMillis - lastTestRunTimeOf_gs1Port) >= 6500 && (currentMillis - lastTestRunTimeOf_gs1Port) < 9500){
+    //Send signal to 90°
+    servoRef.write(135);
+  }
+
+  //Reset the GeekServo Port 1...
+  if ((currentMillis - lastTestRunTimeOf_gs1Port) >= 9500 && (currentMillis - lastTestRunTimeOf_gs1Port) < 12500){
+    //Send signal to 0°
+    servoRef.write(90);
+  }
+
+  //Rotate to LEFT<<<
+  if ((currentMillis - lastTestRunTimeOf_gs1Port) >= 12500 && (currentMillis - lastTestRunTimeOf_gs1Port) < 15500){
+    //Send signal to -30°
+    servoRef.write(75);
+  }
+
+  //Rotate to LEFT<<<
+  if ((currentMillis - lastTestRunTimeOf_gs1Port) >= 15500 && (currentMillis - lastTestRunTimeOf_gs1Port) < 18500){
+    //Send signal to -60°
+    servoRef.write(60);
+  }
+
+  //Rotate to LEFT<<<
+  if ((currentMillis - lastTestRunTimeOf_gs1Port) >= 18500 && (currentMillis - lastTestRunTimeOf_gs1Port) < 21500){
+    //Send signal to -90°
+    servoRef.write(45);
+  }
+}
+
+void GS2PortTest(int pin_gsPort2, Servo& servoRef){
+  //Get current milliseconds time
+  int currentMillis = millis();
+  if ((currentMillis - lastTestRunTimeOf_gs2Port) >= 21500){
+    //Update the last run time
+    lastTestRunTimeOf_gs2Port = currentMillis;
+  }
+    
+
+  //This will run in GeekServo Port 2...
+
+  //GeekServos can rotate until 360°, so, to use a GeekServo in -90°~90° the degrees is different...
+  //-90° is 45°  on GeekServo
+  //0°   is 90°  on GeekServo
+  //90°  is 135° on GeekServo
+
+  //Reset the GeekServo Port 2...
+  if ((currentMillis - lastTestRunTimeOf_gs2Port) >= 0 && (currentMillis - lastTestRunTimeOf_gs2Port) < 500){
+    //Send signal to 0°
+    servoRef.write(90);
+  }
+
+  //Rotate to RIGHT>>>
+  if ((currentMillis - lastTestRunTimeOf_gs2Port) >= 500 && (currentMillis - lastTestRunTimeOf_gs2Port) < 3500){
+    //Send signal to 30°
+    servoRef.write(105);
+  }
+
+  //Rotate to RIGHT>>>
+  if ((currentMillis - lastTestRunTimeOf_gs2Port) >= 3500 && (currentMillis - lastTestRunTimeOf_gs2Port) < 6500){
+    //Send signal to 60°
+    servoRef.write(120);
+  }
+
+  //Rotate to RIGHT>>>
+  if ((currentMillis - lastTestRunTimeOf_gs2Port) >= 6500 && (currentMillis - lastTestRunTimeOf_gs2Port) < 9500){
+    //Send signal to 90°
+    servoRef.write(135);
+  }
+
+  //Reset the GeekServo Port 2...
+  if ((currentMillis - lastTestRunTimeOf_gs2Port) >= 9500 && (currentMillis - lastTestRunTimeOf_gs2Port) < 12500){
+    //Send signal to 0°
+    servoRef.write(90);
+  }
+
+  //Rotate to LEFT<<<
+  if ((currentMillis - lastTestRunTimeOf_gs2Port) >= 12500 && (currentMillis - lastTestRunTimeOf_gs2Port) < 15500){
+    //Send signal to -30°
+    servoRef.write(75);
+  }
+
+  //Rotate to LEFT<<<
+  if ((currentMillis - lastTestRunTimeOf_gs2Port) >= 15500 && (currentMillis - lastTestRunTimeOf_gs2Port) < 18500){
+    //Send signal to -60°
+    servoRef.write(60);
+  }
+
+  //Rotate to LEFT<<<
+  if ((currentMillis - lastTestRunTimeOf_gs2Port) >= 18500 && (currentMillis - lastTestRunTimeOf_gs2Port) < 21500){
+    //Send signal to -90°
+    servoRef.write(45);
   }
 }

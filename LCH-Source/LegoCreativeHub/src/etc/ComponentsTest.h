@@ -34,5 +34,8 @@ void EMPort5Test(int pin_emPort5);
 void EMPort6Test(int pin_emPort6);
 void EMPort7Test(int pin_emPort7);
 void EMPort8Test(int pin_emPort8);
+void BuzzerTest(int pin_buzzer, ezBuzzer& buzzerRef);
+void GS1PortTest(int pin_gsPort1, Servo& servoRef);
+void GS2PortTest(int pin_gsPort2, Servo& servoRef);
 
 #endif
